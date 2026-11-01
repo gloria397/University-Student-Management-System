@@ -2,7 +2,7 @@ package LAB1;
 public class Undergraduate extends Student{
     int registrationNumber;
     String programName;
-    public Undergraduate(int id,String name,String email,double gpa,int registrationNumber, String programName) {
+    public Undergraduate(int id,String name,String email,double gpa) {
         super(id,name,email,gpa);
         this.registrationNumber = registrationNumber;
     }

@@ -1,20 +1,14 @@
 package LAB2;
-import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
-public class DatabaseConnection{
-    Connection connection;
-    public DatabaseConnection() throws SQLException {
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/university", "postgres", "123");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+public class DatabaseConnection {
+    private static final String URL = "jdbc:postgresql://localhost:5432/university";
+    private static final String USER = "postgres";
+    private static final String PASSWORD = "123";
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
     }
-    public Connection getConnection() {
-        return connection;
-    }
-
-
 }
