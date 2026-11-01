@@ -19,7 +19,7 @@ public class Graduate extends Student{
         this.thesistitle = thesistitle;
     }
     public double calculategpa(){
-        return getGpa();
+        return getGpa()* 4.0 / 5.0 ;
     }
     @Override
     public String toString() {
