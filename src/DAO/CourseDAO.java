@@ -1,4 +1,4 @@
-package dao;
+package DAO;
 
 import LAB1.Courses;
 import LAB2.DatabaseConnection;
@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseDao{
+public class CourseDAO {
     public void addCourse(String name, int credits) throws SQLException {
         String sql = "INSERT INTO courses (course_name, credits) VALUES (?, ?)";
         try (Connection con = DatabaseConnection.getConnection();

@@ -1,4 +1,4 @@
-package dao;
+package DAO;
 
 import LAB1.Student;
 import LAB1.Undergraduate;
@@ -8,11 +8,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDao {
+public class StudentDAO {
 
     // CREATE
     public void addStudent(String name, String email, double gpa) throws SQLException {
-        String sql = "INSERT INTO students (name, email, gpa) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO students (student_name, email, gpa) VALUES (?, ?, ?)";
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, name);

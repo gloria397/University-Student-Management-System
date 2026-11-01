@@ -1,10 +1,10 @@
-package dao;
+package DAO;
 
 import LAB2.DatabaseConnection;
 
 import java.sql.*;
 
-public class EnrollmentDao{
+public class EnrollmentDAO {
     public void enroll(int studentId, int courseId) throws SQLException {
         String sql = "INSERT INTO enrollments (student_id, course_id) VALUES (?, ?)";
         try (Connection con = DatabaseConnection.getConnection();
