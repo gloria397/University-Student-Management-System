@@ -46,7 +46,8 @@ public class EnrollmentDAO {
              PreparedStatement ps = con.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                System.out.println("Enrollment " + rs.getInt("id") + ": "
+                System.out.println("Enrollment"
+                        + rs.getInt("enrollment_id") + ": "
                         + rs.getString("student_name") + " -> "
                         + rs.getString("course_name"));
             }
