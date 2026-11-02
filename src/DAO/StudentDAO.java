@@ -12,7 +12,7 @@ public class StudentDAO {
 
     // CREATE
     public void addStudent(String name, String email, double gpa) throws SQLException {
-        String sql = "INSERT INTO students (student_name, email, gpa) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO student (student_name, email, gpa) VALUES (?, ?, ?)";
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, name);
@@ -25,7 +25,7 @@ public class StudentDAO {
     // READ
     public List<Student> getAllStudents() throws SQLException {
         List<Student> list = new ArrayList<>();
-        String sql = "SELECT * FROM students";
+        String sql = "SELECT * FROM student";
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
@@ -42,7 +42,7 @@ public class StudentDAO {
 
     // DELETE
     public void deleteStudent(int id) throws SQLException {
-        String sql = "DELETE FROM students WHERE student_id = ?";
+        String sql = "DELETE FROM student WHERE student_id = ?";
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, id);
