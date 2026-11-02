@@ -23,7 +23,8 @@ public class Graduate extends Student{
     }
     @Override
     public String toString() {
-        return "{ degreename" + degreeName
+        return super.toString()
+                +"{ degreename" + degreeName
                 + ", thesistitle" + thesistitle
                 + ",gpa= " + calculategpa() + "}";
     }

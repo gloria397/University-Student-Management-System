@@ -23,7 +23,8 @@ public class Undergraduate extends Student{
     }
     @Override
     public String toString(){
-        return "{ registrationNumber=" + registrationNumber
+        return super.toString()
+                +"{ registrationNumber=" + registrationNumber
                 + ", programName=" + programName
                 + ", gpa=" + calculategpa() + "}";
     }

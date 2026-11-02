@@ -13,7 +13,8 @@ public class Instructor extends Person{
     }
     @Override
     public String toString() {
-        return "Instructor{" + "salary=" + salary + '}';
+        return super.toString()
+                +"Instructor{" + "salary=" + salary + '}';
     }
 
 
