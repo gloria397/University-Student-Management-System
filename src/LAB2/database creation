@@ -1,0 +1,21 @@
+CREATE TABLE Student (
+    student_id SERIAL PRIMARY KEY,
+    student_name VARCHAR(60),
+    email VARCHAR(60),
+    gpa float
+);
+
+CREATE TABLE Course (
+    course_id SERIAL PRIMARY KEY,
+    course_name VARCHAR(60),
+    credits int
+);
+
+CREATE TABLE Enrollment (
+    enrollment_id SERIAL PRIMARY KEY,
+    course_id int,
+    student_id int,
+    enrollment_date VARCHAR(60),
+    FOREIGN KEY (course_id) REFERENCES Course(course_id),
+    FOREIGN KEY (student_id) REFERENCES Student(student_id)
+);

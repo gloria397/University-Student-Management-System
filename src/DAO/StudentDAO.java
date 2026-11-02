@@ -31,7 +31,7 @@ public class StudentDAO {
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
                 list.add(new Undergraduate(
-                        rs.getInt("id"),
+                        rs.getInt("student_id"),
                         rs.getString("name"),
                         rs.getString("email"),
                         rs.getDouble("gpa")));
@@ -42,7 +42,7 @@ public class StudentDAO {
 
     // DELETE
     public void deleteStudent(int id) throws SQLException {
-        String sql = "DELETE FROM students WHERE id = ?";
+        String sql = "DELETE FROM students WHERE student_id = ?";
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, id);
