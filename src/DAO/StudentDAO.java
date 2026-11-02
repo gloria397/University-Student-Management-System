@@ -32,7 +32,7 @@ public class StudentDAO {
             while (rs.next()) {
                 list.add(new Undergraduate(
                         rs.getInt("student_id"),
-                        rs.getString("name"),
+                        rs.getString("student_name"),
                         rs.getString("email"),
                         rs.getDouble("gpa")));
             }
